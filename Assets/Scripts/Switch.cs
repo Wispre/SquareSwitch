@@ -9,7 +9,7 @@ public class Switch : MonoBehaviour
 	public static Action OnActivatedSwitch;
 
 	public bool isOn { get; private set; } = false;
-	private List<Switch> switches = new();
+	private List<Switch> connectedSwitches = new();
 	public Image img;
 
 	private void Awake()
@@ -36,7 +36,7 @@ public class Switch : MonoBehaviour
 	{
 		OnlyFlipSelf();
 
-		foreach (Switch sw in switches)
+		foreach (Switch sw in connectedSwitches)
 		{
 			sw.OnlyFlipSelf();
 		}
@@ -46,20 +46,18 @@ public class Switch : MonoBehaviour
 
 	public virtual void AssignSwitches(List<Switch> availableSwitches)
 	{
-		availableSwitches.Remove(this);
+		List<Switch> available = new(availableSwitches);
+		available.Remove(this);
 
-		List<Switch> usedSwitches = new();
-		int amount = Random.Range(1, availableSwitches.Count - 1);
+        List<Switch> usedSwitches = new();
+		int canAffectAmount = Random.Range(2, available.Count - 1);
 
-		for (int i = 0; i < amount; i++)
+		for (int i = 0; i < canAffectAmount; i++)
 		{
-			var index = Random.Range(0, availableSwitches.Count);
-			switches.Add(availableSwitches[index]);
-			usedSwitches.Add(availableSwitches[index]);
-			availableSwitches.RemoveAt(index);
+			var index = Random.Range(0, available.Count);
+			connectedSwitches.Add(available[index]);
+			usedSwitches.Add(available[index]);
+            available.RemoveAt(index);
 		}
-
-		availableSwitches.AddRange(usedSwitches);
-		availableSwitches.Add(this);
 	}
 }
