@@ -26,7 +26,7 @@ public class SwitchManager : MonoBehaviour
     private void Start()
     {
         unusedSwitches = new List<Switch>(Switches);
-        GiveSwitchesRandomControl();
+        SetupSwitches();
         FlipThreeSwitches();
     }
 
@@ -36,7 +36,7 @@ public class SwitchManager : MonoBehaviour
         {
             var index = Random.Range(0, unusedSwitches.Count);
             unusedSwitches[i].FlipConnectedSwitches();
-            usedSwitches.Add(unusedSwitches[i]); //!remove this
+            usedSwitches.Add(unusedSwitches[i]);
             Debug.Log(unusedSwitches[i].gameObject.name);
             unusedSwitches.RemoveAt(i);
         }
@@ -53,6 +53,14 @@ public class SwitchManager : MonoBehaviour
         }
 
         setupComplete = true;
+    }
+
+    private void SetupSwitches()
+    {
+        for(int i = 0; i < Switches.Count; i++)
+        {
+            Switches[i].AssignSwitches(Switches);
+        }
     }
 
     private void CheckIfAllSwitchesOff()
@@ -74,42 +82,9 @@ public class SwitchManager : MonoBehaviour
         }
 	}
 
-    private void GiveSwitchesRandomControl()
-    {
-        for (int i = 0; i < Switches.Count; i++)
-        {
-            var amount = Random.Range(2, Switches.Count - 2);
-            AssignSwitchesToSwitch(Switches[i], amount);
-        }
-    }
-
-    private void AssignSwitchesToSwitch(Switch sw, int amount)
-    {
-        unusedSwitches.Remove(sw);
-
-        if(amount > unusedSwitches.Count)
-        {
-            amount = unusedSwitches.Count;
-        }
-
-        for(int i = 0; i < amount; i++)
-        {
-            var index = Random.Range(0, unusedSwitches.Count);
-            usedSwitches.Add(unusedSwitches[index]);
-            sw.AddSwitch(unusedSwitches[index]);
-            unusedSwitches.RemoveAt(index);
-        }
-        AddSwitchesBack();
-        unusedSwitches.Add(sw);
-    }
-
     private void AddSwitchesBack()
     {
-        foreach(Switch sw in usedSwitches)
-        {
-            unusedSwitches.Add(sw);
-        }
-
-        usedSwitches.Clear();
+        unusedSwitches.AddRange(usedSwitches);
+        unusedSwitches.Clear();
     }
 }
