@@ -35,10 +35,10 @@ public class SwitchManager : MonoBehaviour
         for(int i = 0; i < 3; i++)
         {
             var index = Random.Range(0, unusedSwitches.Count);
-            unusedSwitches[i].FlipConnectedSwitches();
-            usedSwitches.Add(unusedSwitches[i]);
-            Debug.Log(unusedSwitches[i].gameObject.name);
-            unusedSwitches.RemoveAt(i);
+            unusedSwitches[index].FlipConnectedSwitches();
+            usedSwitches.Add(unusedSwitches[index]);
+            Debug.Log(unusedSwitches[index].gameObject.name);
+            unusedSwitches.RemoveAt(index);
         }
 
         if (allSwitchesOff)

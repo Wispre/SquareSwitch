@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -9,8 +10,9 @@ public class Switch : MonoBehaviour
 	public static Action OnActivatedSwitch;
 
 	public bool isOn { get; private set; } = false;
-	private List<Switch> connectedSwitches = new();
 	public Image img;
+
+	protected List<Switch> connectedSwitches = new();
 
 	private void Awake()
 	{
