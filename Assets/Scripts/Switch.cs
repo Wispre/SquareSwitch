@@ -32,7 +32,7 @@ public class Switch : MonoBehaviour
 		}
 	}
 
-	public void FlipConnectedSwitches()
+	public virtual void FlipConnectedSwitches()
 	{
 		OnlyFlipSelf();
 
