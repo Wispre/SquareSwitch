@@ -38,8 +38,8 @@ public class DoubleSwitch : Switch
             }
 			index = 0;
         }
-
-	}
+        OnActivatedSwitch?.Invoke();
+    }
 
 	public override void AssignSwitches(List<Switch> availableSwitches)
 	{
