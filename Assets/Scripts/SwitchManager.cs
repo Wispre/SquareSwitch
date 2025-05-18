@@ -32,7 +32,7 @@ public class SwitchManager : MonoBehaviour
 
     private void FlipThreeSwitches()
     {
-        for(int i = 0; i < 1; i++)
+        for(int i = 0; i < 3; i++)
         {
             var index = Random.Range(0, unusedSwitches.Count);
             unusedSwitches[index].FlipConnectedSwitches();

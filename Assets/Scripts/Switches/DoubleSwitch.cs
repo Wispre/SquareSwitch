@@ -43,7 +43,10 @@ public class DoubleSwitch : Switch
 
 	public override void AssignSwitches(List<Switch> availableSwitches)
 	{
-		List<Switch> available = new(availableSwitches);
+		SimpleAssign(availableSwitches, connectedSwitches);
+		SimpleAssign(availableSwitches, connectedSwitchesTwo);
+
+/*		List<Switch> available = new(availableSwitches);
 		available.Remove(this);
 		List<Switch> usedSwitches = new();
 
@@ -67,7 +70,7 @@ public class DoubleSwitch : Switch
 			connectedSwitchesTwo.Add(available[index]);
 			usedSwitches.Add(available[index]);
 			available.RemoveAt(index);
-		}
+		}*/
 	}
 
 }

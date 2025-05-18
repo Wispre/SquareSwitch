@@ -47,18 +47,23 @@ public class Switch : MonoBehaviour
 
 	public virtual void AssignSwitches(List<Switch> availableSwitches)
 	{
-		List<Switch> available = new(availableSwitches);
-		available.Remove(this);
+		SimpleAssign(availableSwitches, connectedSwitches);
+	}
+
+	protected void SimpleAssign(List<Switch> availableSwitches, List<Switch> addTo)
+	{
+        List<Switch> available = new(availableSwitches);
+        available.Remove(this);
 
         List<Switch> usedSwitches = new();
-		int canAffectAmount = Random.Range(2, available.Count - 1);
+        int canAffectAmount = Random.Range(2, available.Count - 1);
 
-		for (int i = 0; i < canAffectAmount; i++)
-		{
-			var index = Random.Range(0, available.Count);
-			connectedSwitches.Add(available[index]);
-			usedSwitches.Add(available[index]);
+        for (int i = 0; i < canAffectAmount; i++)
+        {
+            var index = Random.Range(0, available.Count);
+            addTo.Add(available[index]);
+            usedSwitches.Add(available[index]);
             available.RemoveAt(index);
-		}
-	}
+        }
+    }
 }
