@@ -1,0 +1,7 @@
+public enum SafeKeys
+{
+    DEFAULT_SWITCHES,
+    DOUBLE_SWITCHES,
+    INVERSE_SWITCHES,
+    YOU_NOT_ME_SWITCHES
+}
