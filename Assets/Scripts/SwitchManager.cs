@@ -42,7 +42,7 @@ public class SwitchManager : MonoBehaviour
             var index = Random.Range(0, unusedSwitches.Count);
             unusedSwitches[index].FlipConnectedSwitches();
             usedSwitches.Add(unusedSwitches[index]);
-            Debug.Log(unusedSwitches[index].gameObject.name);
+            Debug.Log(unusedSwitches[index].gameObject.name);    //Used to get solution
             unusedSwitches.RemoveAt(index);
         }
 
@@ -83,7 +83,6 @@ public class SwitchManager : MonoBehaviour
         if (setupComplete)
         {
             OnGameFinished?.Invoke();
-            Debug.Log("Win");
         }
 	}
 
