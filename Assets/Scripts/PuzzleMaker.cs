@@ -25,8 +25,6 @@ public class PuzzleMaker : MonoBehaviour
 
 			if(sw is InverseSwitch)
 			{
-				Debug.Log("this was an inverse switch");
-
 				availableSwitches.Remove(InverseSwitchPrefab);
 
 				if(availableSwitches.Count == 0)
