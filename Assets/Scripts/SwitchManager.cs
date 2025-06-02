@@ -7,7 +7,9 @@ public class SwitchManager : MonoBehaviour
 {
     public static event Action OnGameFinished;
 
-	public List<Switch> Switches = new();
+    public PuzzleMaker Maker;
+
+	private List<Switch> Switches = new();
     private bool allSwitchesOff;
     private List<Switch> usedSwitches = new();
     private List<Switch> unusedSwitches = new();
@@ -25,10 +27,13 @@ public class SwitchManager : MonoBehaviour
 
     private void Start()
     {
+        Switches = Maker.CreateSwitches(9, transform);
+
         unusedSwitches = new List<Switch>(Switches);
         SetupSwitches();
         FlipThreeSwitches();
     }
+
 
     private void FlipThreeSwitches()
     {
