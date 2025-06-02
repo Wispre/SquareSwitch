@@ -1,17 +1,22 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ToggleSelectUI : MonoBehaviour
 {
+    [Header("Visuals")]
     public Sprite SelectedSprite;
     public Sprite UnselectedSprite;
-    public SafeKeys SelectionKey;
-
     public Image ToggleImage;
+    [Space]
+    public SafeKeys SelectionKey;
+    public UnityEvent<SafeKeys, bool> OnToggled;
+    public PuzzleSettings settings;
+    private Toggle toggle;
 
     public void ToggleSprite(bool state)
     {
-        if(state == true)
+        if (state == true)
         {
             ToggleImage.sprite = SelectedSprite;
         }
@@ -19,5 +24,17 @@ public class ToggleSelectUI : MonoBehaviour
         {
             ToggleImage.sprite = UnselectedSprite;
         }
+
+        OnToggled?.Invoke(SelectionKey, state);
+    }
+
+    private void Awake()
+    {
+        toggle = GetComponent<Toggle>();
+    }
+
+    private void Start()
+    {
+        toggle.isOn = settings.SettingsToUse.Contains(SelectionKey);
     }
 }

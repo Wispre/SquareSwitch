@@ -176,8 +176,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedSprite: {fileID: -7120539635782411469, guid: 4812fb9e609a2a641a371a2acc14a9df, type: 3}
   UnselectedSprite: {fileID: 1380894383999056145, guid: 2b3895eb9a1192a459718442ed8c02b0, type: 3}
-  SelectionKey: 2
   ToggleImage: {fileID: 728609256}
+  SelectionKey: 2
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 88855738}
+        m_TargetAssemblyTypeName: PuzzleSelectFeeder, Assembly-CSharp
+        m_MethodName: SaveSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  settings: {fileID: 11400000, guid: 83821be6d42088048a4c65070cc67f5d, type: 2}
 --- !u!114 &19513989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +427,7 @@ GameObject:
   - component: {fileID: 88855735}
   - component: {fileID: 88855734}
   - component: {fileID: 88855733}
+  - component: {fileID: 88855738}
   m_Layer: 5
   m_Name: Canvas PuzzleSelect
   m_TagString: Untagged
@@ -513,6 +530,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &88855738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88855732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e9de613b995d64d8d49fea350a7202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Selector: {fileID: 11400000, guid: 83821be6d42088048a4c65070cc67f5d, type: 2}
 --- !u!1 &205026552
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +880,7 @@ GameObject:
   - component: {fileID: 370361913}
   - component: {fileID: 370361912}
   m_Layer: 5
-  m_Name: Switch Option 1
+  m_Name: Timer Option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,8 +1005,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedSprite: {fileID: -7120539635782411469, guid: 4812fb9e609a2a641a371a2acc14a9df, type: 3}
   UnselectedSprite: {fileID: 1380894383999056145, guid: 2b3895eb9a1192a459718442ed8c02b0, type: 3}
-  SelectionKey: 0
   ToggleImage: {fileID: 1239861349}
+  SelectionKey: 4
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 88855738}
+        m_TargetAssemblyTypeName: PuzzleSelectFeeder, Assembly-CSharp
+        m_MethodName: SaveSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  settings: {fileID: 11400000, guid: 83821be6d42088048a4c65070cc67f5d, type: 2}
 --- !u!114 &370361913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,6 +1176,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Level 0
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 88855738}
+        m_TargetAssemblyTypeName: PuzzleSelectFeeder, Assembly-CSharp
+        m_MethodName: FeedSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &426201161
@@ -1343,8 +1401,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedSprite: {fileID: -7120539635782411469, guid: 4812fb9e609a2a641a371a2acc14a9df, type: 3}
   UnselectedSprite: {fileID: 1380894383999056145, guid: 2b3895eb9a1192a459718442ed8c02b0, type: 3}
-  SelectionKey: 0
   ToggleImage: {fileID: 1524841805}
+  SelectionKey: 0
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 88855738}
+        m_TargetAssemblyTypeName: PuzzleSelectFeeder, Assembly-CSharp
+        m_MethodName: SaveSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  settings: {fileID: 11400000, guid: 83821be6d42088048a4c65070cc67f5d, type: 2}
 --- !u!114 &482825587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,7 +2061,7 @@ GameObject:
   - component: {fileID: 718146323}
   - component: {fileID: 718146324}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Setting Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2013,7 +2087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -47.70044}
+  m_AnchoredPosition: {x: 0, y: -47.700684}
   m_SizeDelta: {x: -53.7766, y: -339.7428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &718146323
@@ -2136,9 +2210,8 @@ GameObject:
   - component: {fileID: 834334243}
   - component: {fileID: 834334246}
   - component: {fileID: 834334245}
-  - component: {fileID: 834334244}
   m_Layer: 5
-  m_Name: SwitchTypeSelect
+  m_Name: Timer Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2164,32 +2237,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 823.9, y: 121.0751}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &834334244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834334242}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 8
-    m_Right: 8
-    m_Top: 8
-    m_Bottom: 8
-  m_ChildAlignment: 0
-  m_Spacing: 8
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &834334245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2395,8 +2442,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1627555342}
-  - {fileID: 426201159}
   - {fileID: 718146321}
+  - {fileID: 426201159}
   m_Father: {fileID: 88855737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3137,8 +3184,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedSprite: {fileID: -7120539635782411469, guid: 4812fb9e609a2a641a371a2acc14a9df, type: 3}
   UnselectedSprite: {fileID: 1380894383999056145, guid: 2b3895eb9a1192a459718442ed8c02b0, type: 3}
-  SelectionKey: 1
   ToggleImage: {fileID: 535015656}
+  SelectionKey: 1
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 88855738}
+        m_TargetAssemblyTypeName: PuzzleSelectFeeder, Assembly-CSharp
+        m_MethodName: SaveSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  settings: {fileID: 11400000, guid: 83821be6d42088048a4c65070cc67f5d, type: 2}
 --- !u!114 &1571537521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3295,7 +3358,7 @@ GameObject:
   - component: {fileID: 1627555344}
   - component: {fileID: 1627555343}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3883,8 +3946,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedSprite: {fileID: -7120539635782411469, guid: 4812fb9e609a2a641a371a2acc14a9df, type: 3}
   UnselectedSprite: {fileID: 1380894383999056145, guid: 2b3895eb9a1192a459718442ed8c02b0, type: 3}
-  SelectionKey: 3
   ToggleImage: {fileID: 2129297539}
+  SelectionKey: 3
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 88855738}
+        m_TargetAssemblyTypeName: PuzzleSelectFeeder, Assembly-CSharp
+        m_MethodName: SaveSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  settings: {fileID: 11400000, guid: 83821be6d42088048a4c65070cc67f5d, type: 2}
 --- !u!114 &2089581373
 MonoBehaviour:
   m_ObjectHideFlags: 0
