@@ -7,9 +7,9 @@ public class SwitchManager : MonoBehaviour
 {
     public static event Action OnGameFinished;
 
-	public List<Switch> Switches = new();
     public PuzzleMaker Maker;
 
+	private List<Switch> Switches = new();
     private bool allSwitchesOff;
     private List<Switch> usedSwitches = new();
     private List<Switch> unusedSwitches = new();

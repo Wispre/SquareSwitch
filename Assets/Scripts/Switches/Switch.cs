@@ -9,6 +9,7 @@ public class Switch : MonoBehaviour
 	public static Action OnActivatedSwitch;
 
 	public bool isOn { get; private set; } = false;
+	public ColorOptions colorOptions;
 
 	private Image img;
 	protected List<Switch> connectedSwitches = new();
@@ -16,7 +17,7 @@ public class Switch : MonoBehaviour
 	private void Awake()
 	{
 		img = gameObject.GetComponent<Image>();
-		img.color = Color.black;
+		img.color = colorOptions.Color2;
 	}
 
 	public void OnlyFlipSelf()
@@ -25,11 +26,11 @@ public class Switch : MonoBehaviour
 
 		if (isOn)
 		{
-			img.color = Color.yellow;
+			img.color = colorOptions.Color1;
 		}
 		else
 		{
-			img.color = Color.black;
+			img.color = colorOptions.Color2;
 		}
 	}
 

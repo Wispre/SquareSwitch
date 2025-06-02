@@ -10,6 +10,16 @@ public class PuzzleTimer : MonoBehaviour
     private float elapsedtime;
     private bool useTimer;
 
+    private void OnEnable()
+    {
+        SwitchManager.OnGameFinished += StopTimer;
+    }
+
+    private void OnDisable()
+    {
+        SwitchManager.OnGameFinished -= StopTimer;
+    }
+
     private void Start()
     {
         if (settings.SettingsToUse.Contains(SafeKeys.TIMER))
@@ -32,5 +42,10 @@ public class PuzzleTimer : MonoBehaviour
             TimeSpan timeSpan = TimeSpan.FromSeconds(elapsedtime);
             visual.text = string.Format("{0}h {1}m {2}s", (int)timeSpan.TotalHours, timeSpan.Minutes, timeSpan.Seconds);
         }
+    }
+
+    private void StopTimer()
+    {
+        useTimer = false;
     }
 }
