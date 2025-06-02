@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4135737506198238453}
   - component: {fileID: 1464210652995790594}
   - component: {fileID: 6477933841840187988}
-  - component: {fileID: 7694946287016270476}
+  - component: {fileID: 4522780815448086078}
   m_Layer: 5
-  m_Name: Switch
+  m_Name: Default Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7694946287016270476}
+      - m_Target: {fileID: 4522780815448086078}
         m_TargetAssemblyTypeName: Switch, Assembly-CSharp
         m_MethodName: FlipConnectedSwitches
         m_Mode: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7694946287016270476
+--- !u!114 &4522780815448086078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,4 +145,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616a9919f52474c4b9d4d75f3b819f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 0}
