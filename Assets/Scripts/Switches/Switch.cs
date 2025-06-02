@@ -9,8 +9,8 @@ public class Switch : MonoBehaviour
 	public static Action OnActivatedSwitch;
 
 	public bool isOn { get; private set; } = false;
-	public Image img;
 
+	private Image img;
 	protected List<Switch> connectedSwitches = new();
 
 	private void Awake()

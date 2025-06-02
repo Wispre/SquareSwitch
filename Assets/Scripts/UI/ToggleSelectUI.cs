@@ -1,34 +1,23 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ToggleSelectUI : MonoBehaviour, IPointerDownHandler
+public class ToggleSelectUI : MonoBehaviour
 {
-
+    public Sprite SelectedSprite;
+    public Sprite UnselectedSprite;
     public SafeKeys SelectionKey;
-    private bool IsSelected;
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        IsSelected = !IsSelected;
 
-        if(IsSelected)
+    public Image ToggleImage;
+
+    public void ToggleSprite(bool state)
+    {
+        if(state == true)
         {
-            PlayerPrefs.SetInt(SelectionKey.ToString(), 1);
+            ToggleImage.sprite = SelectedSprite;
         }
         else
         {
-            PlayerPrefs.SetInt(SelectionKey.ToString(), 0);
-        }
-    }
-
-    public string GetSelection()
-    {
-        if(IsSelected)
-        {
-            return SelectionKey.ToString();
-        }
-        else
-        {
-            return "";
+            ToggleImage.sprite = UnselectedSprite;
         }
     }
 }
