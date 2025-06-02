@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85eaf9f9fd66088448650c853c98c84b, type: 3}
+  m_Name: PuzzleSelector
+  m_EditorClassIdentifier: 
+  DefaultSwitch: {fileID: 7694946287016270476, guid: 10c8257c1def67a4088b273ef899eed7, type: 3}
